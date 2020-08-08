@@ -1,0 +1,17 @@
+page{
+    color: #8DA6F4;
+    font-family: "Microsoft yahei";
+}
+.header-swiper{
+    height: 350rpx;
+    background-color: #ffffff;
+}
+.header-swiper swiper{
+    height: 290rpx;
+}
+.header-swiper .top-news{
+    height: 60rpx;
+    line-height: 60rpx;
+    font-family: "微软雅黑";
+    font-size: 28rpx;
+}

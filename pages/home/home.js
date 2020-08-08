@@ -1,11 +1,27 @@
 // pages/home/home.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    swiperConfig:{
+      indicatorDots: true,
+      indicatorColor: "rgba(255,255,255,0.5)",
+      indicatorActiveColor:"#FFFFFF"
+    },
+    swiperItemList:[
+      {
+        bgColor:"#D0DDF3",
+        imgSrc: ""
+      },
+      {
+        bgColor:"#5785ED",
+        imgSrc: ""
+      },
+      {
+        bgColor:"#E7317A",
+        imgSrc: ""
+      },
+    ],
+    topNews:"《你不知道的JavaScript(上卷)》"
   },
 
   /**
