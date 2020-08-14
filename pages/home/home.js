@@ -1,6 +1,6 @@
 // pages/home/home.js
+import moment from 'moment'
 Page({
-
   data: {
     swiperConfig:{
       indicatorDots: true,
@@ -8,27 +8,71 @@ Page({
       indicatorActiveColor:"#FFFFFF"
     },
     swiperItemList:[
+     
       {
-        bgColor:"#D0DDF3",
-        imgSrc: ""
-      },
-      {
+        id:1,
         bgColor:"#5785ED",
-        imgSrc: ""
+        imgSrc: "/images/banner/guanzhu.png"
       },
       {
-        bgColor:"#E7317A",
-        imgSrc: ""
+        id:2,
+        bgColor:"#ffffff",
+        // imgSrc: "/images/banner/home-banner-jifen.png"
+        imgSrc: "/images/banner/jifen.png"
+      },
+      {
+        id:3,
+        bgColor:"#ffffff",
+        imgSrc: "/images/banner/changshi.png"
       },
     ],
-    topNews:"《你不知道的JavaScript(上卷)》"
+    topNews:"《你不知道的JavaScript(上卷)》",
+    currentTime:"00:00:00",
+    tikuGridData:[
+      {
+        id:1,
+        icon:"/images/icon/grid-icon111.png",
+        name:"选择题",
+        path:""
+      },
+      {
+        id:2,
+        icon:"/images/icon/grid-icon222.png",
+        name:"选择题",
+        path:""
+      },
+      {
+        id:3,
+        icon:"/images/icon/grid-icon333.png",
+        name:"选择题",
+        path:""
+      },
+      {
+        id:4,
+        icon:"/images/icon/grid-icon444.png",
+        name:"选择题",
+        path:""
+      },
+      {
+        id:5,
+        icon:"/images/icon/grid-icon555.png",
+        name:"选择题",
+        path:""
+      },
+      {
+        id:6,
+        icon:"/images/icon/grid-icon666.png",
+        name:"选择题",
+        path:""
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
@@ -42,7 +86,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    setInterval(()=>{
+      this.setData({
+        currentTime: moment(new Date()).format("HH:mm:ss")
+      })
+    }, 1000);
 
+    if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0
+        })
+      }
   },
 
   /**

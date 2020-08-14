@@ -1,0 +1,30 @@
+<view class="profile-container">
+  <view class="profile-header">
+    <image src="/images/icon/book.png"></image>
+    <view class="profile-count">
+      <view class="profile-count-item">
+        <text class="profile-count-item-number">5</text>
+        <text class="profile-count-item-tag">累计打卡天数</text>
+      </view>
+      <view class="profile-count-item">
+        <text class="profile-count-item-number">0</text>
+        <text class="profile-count-item-tag"> 收藏错题数量</text>
+      </view>
+      <view class="profile-count-item">
+        <text class="profile-count-item-number">1</text>
+        <text class="profile-count-item-tag"> 练习试卷数量</text>
+      </view>
+    </view>
+    <view class="integral">
+      <image src="/images/icon/profile-integral.png"></image>
+      <text>赚积分</text>
+    </view>
+  </view>
+
+  <view class="profile-list-container">
+
+  </view>
+
+
+
+</view>

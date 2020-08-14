@@ -1,0 +1,20 @@
+<template name="homeGrid">
+  <view class="home-grid">
+
+    <block
+     wx:for="{{tikuGridData}}"
+     wx:for-index="id" 
+     wx:key="id" 
+     wx:for-item="tikuGrid"
+    >
+      
+      <view
+         class="grid-item"
+      >
+        <image src="{{tikuGrid.icon}}"> </image>
+        <text>{{tikuGrid.name}}</text>
+      </view>
+
+    </block>
+  </view>
+</template>

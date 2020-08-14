@@ -1,11 +1,8 @@
+<import src="./home-header/home-header-template.wxml" />
+<import src="./card/card.wxml" />
+<import src="./home-grid/home-grid-template.wxml" />
 <view class="home-container">
-	<view class="header-swiper">
-		<swiper indicator-dots="{{swiperConfig.indicatorDots}}" indicator-color="{{swiperConfig.indicatorColor}}" indicator-active-color="{{swiperConfig.indicatorActiveColor}}">
-			<block wx:for="{{swiperItemList}}" wx:for-index="idx" wx:key="*this" wx:for-item="swiperItem">
-				<swiper-item style="background-color:{{swiperItem.bgColor}}"></swiper-item>
-			</block>
-		</swiper>
-    <text class="top-news">{{topNews}}</text>
-	</view>
-
+	<template is="homeHeader" data="{{swiperConfig,swiperItemList,topNews}}"></template>
+	<template is="card" data="{{currentTime}}"></template>
+	<template is="homeGrid" data="{{tikuGridData}}"></template>
 </view>

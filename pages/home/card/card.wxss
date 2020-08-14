@@ -1,0 +1,74 @@
+.card-container{
+  padding-top: 10rpx;
+  width:100%;
+  height: 290rpx;
+  background-color: #fff;
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+.btn-container{
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btn-card {
+  background-color: #327BF2;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  color:#fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  position: absolute;
+  z-index:100;
+}
+.btn-card-text{
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.btn-card-time{
+  font-size: 24rpx;
+}
+
+
+.btn-card-wave {
+  position: absolute;
+  z-index:10;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background-color: rgba(50, 123, 242, 0.47);
+  opacity: 0.5;
+  /* animation: sk-bounce 1s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);  */
+  animation: sk-bounce 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955); 
+}
+
+/*.sk-bounce-dot:nth-child(2) { animation-delay: -1.0s; }*/
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.8);
+  } 45%, 55% {
+    transform: scale(1); 
+  } 
+}
+
+
+.btn-text{
+  height: 80rpx;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color:#888;
+  font-size: 24rpx;
+}

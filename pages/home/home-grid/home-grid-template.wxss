@@ -1,0 +1,35 @@
+.home-grid{
+  height: auto;
+  width: 100%;
+  min-height: 400rpx;
+  background-color: #fff;
+  margin-top: 15rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.grid-item{
+  width: 33%;
+  height: 200rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  border-right:1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-item:nth-of-type(3n){
+  border-right: none;
+}
+
+.grid-item image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.grid-item text{
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  color: #666;
+}

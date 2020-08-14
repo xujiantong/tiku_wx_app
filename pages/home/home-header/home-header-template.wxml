@@ -1,0 +1,18 @@
+<template name="homeHeader">
+	<view class="header-swiper">
+		<swiper indicator-dots="{{swiperConfig.indicatorDots}}" indicator-color="{{swiperConfig.indicatorColor}}" indicator-active-color="{{swiperConfig.indicatorActiveColor}}">
+			<block wx:for="{{swiperItemList}}" 
+			wx:for-index="index" 
+			wx:key="id" 
+			wx:for-item="swiperItem">
+				<swiper-item style="background-color:{{swiperItem.bgColor}}">
+					<image wx:if="{{swiperItem.imgSrc}}" src="{{swiperItem.imgSrc}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+    <view class="top-news">
+			<image src="/images/icon/book.png"></image>
+			<text class="top-news-text">{{topNews}}</text>
+		</view>
+	</view>
+</template>
