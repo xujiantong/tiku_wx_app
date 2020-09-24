@@ -20,7 +20,7 @@ Page({
           wx.getUserInfo({
             success: data => {
               app.globalData.userInfo = data.userInfo;
-              console.log(app.globalData.userInfo)
+              console.log(data)
               this.setData({
                 userInfo: app.globalData.userInfo,
                 hasUserInfo: true
@@ -35,9 +35,15 @@ Page({
     });
   },
   getUserInfo(event) {
-    app.globalData.userInfo = e.detail.userInfo
+    console.log(event)
+    app.globalData.userInfo = event.detail.userInfo;
+    wx.login({
+      success: res=>{
+        console.log(res)
+      }
+    })
     this.setData({
-      userInfo: e.detail.userInfo,
+      userInfo: event.detail.userInfo,
       hasUserInfo: true
     })
   },

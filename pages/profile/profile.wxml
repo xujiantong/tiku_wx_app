@@ -31,10 +31,14 @@
 
   <view class="profile-list-container">
     <view class="profile-list">
-      <view class="profile-list-item"></view>
-      <view class="profile-list-item"></view>
-      <view class="profile-list-item"></view>
-      <view class="profile-list-item"></view>
+      <view class="profile-list-item">
+        <image class="profile-list-item-icon" src="/images/icon/profile-test.png"></image>
+        <text class="profile-list-item-name">我的练习</text>
+      </view>
+      <view class="profile-list-item">
+        <image class="profile-list-item-icon"  src="/images/icon/profile-exam.png"></image>
+        <text class="profile-list-item-name">我的考试</text>
+      </view>
     </view>
    
   </view>

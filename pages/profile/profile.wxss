@@ -99,9 +99,23 @@
   box-sizing: border-box;
 }
 .profile-list-item{
-  height: 80rpx;
+  height: 100rpx;
   border-bottom: 1px solid #eee;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 .profile-list > .profile-list-item:last-of-type{
   border-bottom: none;
 }
+.profile-list-item-icon{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 15rpx;
+}
+.profile-list-item-name{
+  font-size: 32rpx;
+  color: #333333;
+}
+
