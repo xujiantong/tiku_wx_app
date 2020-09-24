@@ -1,6 +1,14 @@
 <view class="profile-container">
   <view class="profile-header">
-    <image src="/images/icon/book.png"></image>
+    <button 
+      class="avatator-postion"
+      open-type="getUserInfo"
+      bindgetuserinfo="getUserInfo"
+      plain="{{false}}"
+    >
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </button>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     <view class="profile-count">
       <view class="profile-count-item">
         <text class="profile-count-item-number">5</text>
@@ -22,7 +30,13 @@
   </view>
 
   <view class="profile-list-container">
-
+    <view class="profile-list">
+      <view class="profile-list-item"></view>
+      <view class="profile-list-item"></view>
+      <view class="profile-list-item"></view>
+      <view class="profile-list-item"></view>
+    </view>
+   
   </view>
 
 

@@ -1,71 +1,45 @@
 // pages/profile/profile.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{},
+    hasUserInfo: false,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    this.userAuthorized();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  userAuthorized() {
+    wx.getSetting({
+      success: data => {
+        if (data.authSetting['scope.userInfo']) {
+          // 用户已授权
+          wx.getUserInfo({
+            success: data => {
+              app.globalData.userInfo = data.userInfo;
+              console.log(app.globalData.userInfo)
+              this.setData({
+                userInfo: app.globalData.userInfo,
+                hasUserInfo: true
+              })
+            },
+          })
+        } else {
+          // 未授权
+          console.log("err")
+        }
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-    this.getTabBar()) {
-    this.getTabBar().setData({
-      selected: 2
+  getUserInfo(event) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
     })
-  }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })
