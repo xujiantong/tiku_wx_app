@@ -2,7 +2,7 @@
   "usingComponents": {},
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "个人中心",
+  "navigationBarTitleText": "题库科目详情",
   "navigationBarTextStyle": "black",
   "navigationStyle": "default"
 }

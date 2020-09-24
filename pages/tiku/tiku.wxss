@@ -1,1 +1,7 @@
 /* pages/tiku/tiku.wxss */
+.tiku{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #ffffff;
+}

@@ -12,6 +12,14 @@ Page({
   onLoad(options) {
     this.userAuthorized();
   },
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
+  },
   userAuthorized() {
     wx.getSetting({
       success: data => {

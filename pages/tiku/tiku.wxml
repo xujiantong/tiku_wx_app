@@ -1,2 +1,3 @@
-<!--pages/tiku/tiku.wxml-->
-<text>pages/tiku/tiku.wxml</text>
+<view class="tiku">
+  <navbar page-name="你当前页面的名字"></navbar>
+</view>

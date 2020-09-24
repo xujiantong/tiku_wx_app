@@ -12,7 +12,7 @@
 		</swiper>
     <view class="top-news">
 			<image src="/images/icon/book.png"></image>
-			<text class="top-news-text">{{topNews}}</text>
+			<text class="top-news-text">已收录{{itemNumber}}道题</text>
 		</view>
 	</view>
 </template>

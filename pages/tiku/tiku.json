@@ -1,7 +1,7 @@
 {
-  "usingComponents": {},
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "",
-  "navigationBarTextStyle": "black"
+  "usingComponents": {
+    "navbar": "/components/tiku-navbar/index"
+  },
+  "navigationStyle": "custom",
+  "backgroundColor": "#ffffff"
 }

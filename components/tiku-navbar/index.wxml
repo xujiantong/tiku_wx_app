@@ -1,0 +1,6 @@
+<view class="tiku-nav-bar">
+  <view class="nav-bar">
+    
+  </view>
+  <view><button bindtap="testPage">页面跳转测试</button></view>
+</view>

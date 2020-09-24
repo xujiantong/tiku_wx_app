@@ -11,8 +11,10 @@ App({
   //      console.log(res.data)
   //    }
   //  })
+ 
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    selected: 0,
   }
 })

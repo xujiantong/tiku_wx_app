@@ -1,7 +1,7 @@
 .home-grid{
   height: auto;
   width: 100%;
-  min-height: 400rpx;
+  /* min-height: 400rpx; */
   background-color: #fff;
   margin-top: 15rpx;
   display: flex;

@@ -7,7 +7,6 @@
      wx:key="id" 
      wx:for-item="tikuGrid"
     >
-      
       <view
          class="grid-item"
       >

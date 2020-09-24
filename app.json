@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/profile/profile",
     "pages/home/home",
-    "pages/tiku/tiku"
-   
+    "pages/tiku/tiku",
+    "pages/profile/profile",
+    "components/tiku-navbar/index",
+    "pages/tiku/child/test/test"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "题库",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom",
+    "backgroundColor": "#ffffff"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

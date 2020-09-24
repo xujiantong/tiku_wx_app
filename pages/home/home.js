@@ -25,45 +25,45 @@ Page({
         imgSrc: "/images/banner/changshi.png"
       },
     ],
-    topNews:"《你不知道的JavaScript(上卷)》",
+    itemNumber:1000,
     currentTime:"00:00:00",
     tikuGridData:[
       {
         id:1,
         icon:"/images/icon/grid-icon111.png",
-        name:"选择题",
+        name:"每日一练",
         path:""
       },
       {
         id:2,
         icon:"/images/icon/grid-icon222.png",
-        name:"选择题",
+        name:"随机练习",
         path:""
       },
       {
         id:3,
         icon:"/images/icon/grid-icon333.png",
-        name:"选择题",
+        name:"错题练习",
         path:""
       },
-      {
-        id:4,
-        icon:"/images/icon/grid-icon444.png",
-        name:"选择题",
-        path:""
-      },
-      {
-        id:5,
-        icon:"/images/icon/grid-icon555.png",
-        name:"选择题",
-        path:""
-      },
-      {
-        id:6,
-        icon:"/images/icon/grid-icon666.png",
-        name:"选择题",
-        path:""
-      }
+      // {
+      //   id:4,
+      //   icon:"/images/icon/grid-icon444.png",
+      //   name:"选择题",
+      //   path:""
+      // },
+      // {
+      //   id:5,
+      //   icon:"/images/icon/grid-icon555.png",
+      //   name:"选择题",
+      //   path:""
+      // },
+      // {
+      //   id:6,
+      //   icon:"/images/icon/grid-icon666.png",
+      //   name:"选择题",
+      //   path:""
+      // }
     ],
     isPunchCard: false
   },
