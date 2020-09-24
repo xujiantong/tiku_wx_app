@@ -1,12 +1,16 @@
 <template name="card">
-  <view class="card-container">
-    <view class="btn-container">
-      <view class="btn-card">
-        <text class="btn-card-text">打卡</text>
-        <text class="btn-card-time">{{currentTime}}</text>
-      </view>
-      <view class="btn-card-wave"></view>
-    </view>
-    <text class="btn-text">千里之行始于足下 快来完成今天的学习吧</text>
-  </view>
+	<view class="card-container">
+		<view class="btn-container">
+			<view class="btn-card" wx:if="{{!isPunchCard}}" bindtap="punchCard">
+				<text class="btn-card-text">打卡</text>
+				<text class="btn-card-time">{{currentTime}}</text>
+			</view>
+			<view class="btn-card" wx:else>
+				<text class="btn-card-text">已打卡</text>
+					<text class="btn-card-time">{{currentTime}}</text>
+			</view>
+			<view class="btn-card-wave"></view>
+		</view>
+		<text class="btn-text">千里之行始于足下 快来完成今天的学习吧</text>
+	</view>
 </template>

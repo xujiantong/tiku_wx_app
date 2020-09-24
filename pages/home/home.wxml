@@ -3,6 +3,6 @@
 <import src="./home-grid/home-grid-template.wxml" />
 <view class="home-container">
 	<template is="homeHeader" data="{{swiperConfig,swiperItemList,topNews}}"></template>
-	<template is="card" data="{{currentTime}}"></template>
+	<template is="card" data="{{currentTime, isPunchCard}}"></template>
 	<template is="homeGrid" data="{{tikuGridData}}"></template>
 </view>

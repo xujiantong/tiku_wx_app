@@ -8,7 +8,6 @@ Page({
       indicatorActiveColor:"#FFFFFF"
     },
     swiperItemList:[
-     
       {
         id:1,
         bgColor:"#5785ED",
@@ -65,7 +64,8 @@ Page({
         name:"选择题",
         path:""
       }
-    ]
+    ],
+    isPunchCard: false
   },
 
   /**
@@ -127,11 +127,20 @@ Page({
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
+  },
+  punchCard(){
+    this.setData({
+      isPunchCard: true
+    })
   }
+
+
+
+
+
 })
