@@ -1,7 +1,7 @@
 const app = getApp();
 Component({
   data: {
-    selected: 0,
+    selected: 1,
     color: "#999",
     selectedColor: "#5785ED",
     list: [   {

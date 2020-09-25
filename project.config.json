@@ -6,7 +6,7 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"enhance": false,
+		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
@@ -31,7 +31,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.12.2",
+	"libVersion": "2.13.0",
 	"appid": "wx7c2072fe0febe7d0",
 	"projectname": "tiku_wx_app",
 	"debugOptions": {

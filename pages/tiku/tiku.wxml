@@ -1,3 +1,10 @@
 <view class="tiku">
-  <navbar page-name="你当前页面的名字"></navbar>
+  <tiku-navbar 
+    user-info="{{userInfo}}"
+    bindtikucate="tikucate"
+  >
+  </tiku-navbar>
+  <block wx-if="{{tikuCateList.length === 0}}">
+    
+  </block>
 </view>

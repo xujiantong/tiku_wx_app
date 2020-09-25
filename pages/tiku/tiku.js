@@ -1,15 +1,31 @@
+const app = getApp()
 Page({
   data: {
-    nbFrontColor: '#000000',
-    nbBackgroundColor: '#ffffff',
+    tikuCateList:[],
+    tikuCate:{},
   },
   onLoad() {
-    this.setData({
-      nbTitle: '新标题',
-      nbLoading: false,
-      nbFrontColor: '#ffffff',
-      nbBackgroundColor: '#000000',
-    })
+    wx.getSetting({
+      success: data => {
+        if (data.authSetting['scope.userInfo']) {
+          // 用户已授权
+          wx.getUserInfo({
+            success: data => {
+              app.globalData.userInfo = data.userInfo;
+              console.log(data)
+              this.setData({
+                userInfo: app.globalData.userInfo,
+                hasUserInfo: true
+              })
+            },
+          })
+        } else {
+          // 未授权
+          console.log("err")
+        }
+      }
+    });
+    
   },
   onShow() {
     if (typeof this.getTabBar === 'function' &&
@@ -18,5 +34,9 @@ Page({
         selected: 1
       })
     }
+  },
+  // 获取选择的题库cate
+  tikucate(e){
+    console.log(e.detail.params)
   }
 })

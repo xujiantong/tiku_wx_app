@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "选择题库",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "default"
+}

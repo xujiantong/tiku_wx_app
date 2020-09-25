@@ -1,5 +1,5 @@
 // components/navbar/index.js
-const App = getApp();
+const app = getApp();
 
 Component({
   options: {
@@ -17,6 +17,10 @@ Component({
     showHome: {
       type: Boolean,
       value: true
+    },
+    userInfo:{
+      type: Object,
+      value: ""
     }
   },
 
@@ -28,30 +32,32 @@ Component({
   },
   lifetimes: {
     attached: function () {
-      this.setData({
-        navH: App.globalData.navHeight
+     let that = this;
+     wx.getSystemInfo({
+        success (res) {
+          console.log(res.statusBarHeight);
+          that.setData({
+            navH: res.statusBarHeight
+          })
+        }
       })
+      console.log(this.data.userInfo)
+     
      }
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    //回退
-    navBack: function () {
-        wx.navigateBack({
-          delta: 1
-        })      
+    handleTap(e){
+      let { index } = e.currentTarget.dataset;
+      let data = this.data;
+      // 自定义一个事件，并且传值
+      this.triggerEvent('tikucate',{params: {}},{})
     },
-    //回主页
-    toIndex: function () {
+    goTikuCateList(){
       wx.navigateTo({
-        url: '/pages/home/index'
-      })
-    },
-    testPage(){
-      wx.reLaunch({
-        url: '/pages/tiku/child/test/test'
+        url: '/pages/tiku/cate-list/index'
       })
     }
   }
