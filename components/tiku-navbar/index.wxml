@@ -3,8 +3,14 @@
     <view class="header" style="top:{{navH}}px">
       <image class="avator" src="{{userInfo.avatarUrl}}"></image>
       <view class="check-block" bindtap="goTikuCateList">
-        <view class="tiku-cate-name" wx:if="{{!hasCate}}">请选择题库</view>
-        <view class="tiku-cate-name" wx:else>{{cate.name}}</view>
+        <view class="tiku-cate-name" wx:if="{{!hasCate}}">
+          <text>请选择题库</text>
+          <image src="./images/arrow_bottom.png"></image>
+        </view>
+        <view class="tiku-cate-name" wx:else>
+          <text>{{cate.name}}</text>
+         <image src="./images/arrow_bottom.png"></image>
+        </view>
         <view class="tiku-item-text">为努力的自己加油吧!</view>
       </view>
     </view>

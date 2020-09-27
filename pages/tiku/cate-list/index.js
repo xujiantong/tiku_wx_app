@@ -56,6 +56,10 @@ Page({
     selectedTikuCate(e){
         console.log(e.currentTarget.dataset);
         app.globalData.cate = e.currentTarget.dataset.cate;
+        wx.setStorage({
+          data: JSON.stringify(e.currentTarget.dataset.cate),
+          key: 'cate',
+        })
         wx.navigateBack({
             delta: 1
         })

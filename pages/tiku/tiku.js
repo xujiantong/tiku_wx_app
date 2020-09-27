@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   data: {
-    tikuCateList:[],
+    tikuDepotList:[],
     tikuCate:{},
   },
   onLoad() {
@@ -33,15 +33,39 @@ Page({
         selected: 1
       })
     }
-    console.log("题库页面的 cate 加载")
-    console.log(app.globalData.cate);
+    // wx.getStorage({
+    //   key: 'cate',
+    // })
+   
     // 获取当前题库下面的科目
   },
   // 获取选择的题库cate
-  tikucate(e){
-    console.log(e.detail.params)
-  },
-  tikucate2(e){
-    console.log(e.detail.params)
-  },
+  onGetTikuCate(e){
+    if(e.detail.params.hasCate){
+      let cate = e.detail.params.cate;
+      this.setData({
+        tikuCate: cate,
+        hasCate: e.detail.params.hasCate
+      });
+      let that = this;
+      wx.request({
+          url: `https://tiku.mok88.com/api/tiku/depot/findListByCategory.json?category=${cate.id}`,
+          method: "POST",
+          header: {
+              "Content-Type": "application/json"
+          },
+          success: function (res) {
+              console.log(res.data.data)
+              that.setData({
+                tikuDepotList: res.data.data
+              })
+          }
+      })
+    } else {
+      this.setData({
+        hasCate: e.detail.params.hasCate
+      })
+    }
+   
+  }
 })

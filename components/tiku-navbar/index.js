@@ -37,7 +37,6 @@ Component({
     
       wx.getSystemInfo({
         success(res) {
-          console.log(res.statusBarHeight);
           that.setData({
             navH: res.statusBarHeight
           })
@@ -51,17 +50,36 @@ Component({
   pageLifetimes: {
     // 组件所在页面的生命周期函数
     show: function () { 
-      console.log(app.globalData.cate)
-      if(Object.keys(app.globalData.cate).length>0){
-        this.setData({
-          cate: app.globalData.cate,
-          hasCate: true
-        })
-      } else {
-        this.setData({
-          hasCate: false
-        })
-      }
+      let _that = this;
+      wx.getStorage({
+        key: 'cate',
+        success(res){
+          let cate = JSON.parse(res.data);
+          console.log(cate);
+          _that.setData({
+            hasCate: true,
+            cate
+          }),
+          _that.triggerEvent('onGetTikuCate', {
+            params: {
+              cate,
+              hasCate: true
+            }
+          }, {})
+        },
+        fail(res){
+          _that.setData({
+            hasCate: false
+          }),
+          _that.triggerEvent('onGetTikuCate', {
+            params: {
+              hasCate: false
+            }
+          }, {})
+        }
+      })
+   
+      
 
     }
   },
@@ -69,16 +87,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleTap(e) {
-      let {
-        index
-      } = e.currentTarget.dataset;
-      let data = this.data;
-      // 自定义一个事件，并且传值
-      this.triggerEvent('tikucate', {
-        params: {}
-      }, {})
-    },
+   
     goTikuCateList() {
       wx.navigateTo({
         url: '/pages/tiku/cate-list/index'

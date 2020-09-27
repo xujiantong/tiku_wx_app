@@ -39,8 +39,18 @@
   color: #fff;
   font-size: 32rpx;
   font-weight: 600;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tiku-cate-name image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
 }
 .tiku-item-text{
+  margin-top: 6rpx;
   font-size: 22rpx;
   color: #B4B5F5;
 }

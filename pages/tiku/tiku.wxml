@@ -2,9 +2,59 @@
   <tiku-navbar 
     user-info="{{userInfo}}"
     bindtikucate="tikucate"
+    bind:onGetTikuCate="onGetTikuCate"
+
   >
   </tiku-navbar>
-  <block wx-if="{{tikuCateList.length === 0}}">
-    
+  <block wx:if="{{tikuDepotList.length > 0}}">
+    <view class="depot">
+      <view class="depot-info">
+        <text class="depot-name">德廉测试</text>
+        <view class="depot-process">
+          <text class="depot-process-text">0/1777题</text>
+          <view class="depot-process-bar"></view>
+        </view>
+      </view>
+      <view class="depot-action">
+        <button>练习</button>
+      </view>
+    </view>
+    <view class="depot">
+      <view class="depot-info">
+        <text class="depot-name">德廉测试</text>
+        <view class="depot-process">
+          <text class="depot-process-text">0/1777题</text>
+          <view class="depot-process-bar"></view>
+        </view>
+      </view>
+      <view class="depot-action">
+        <button>练习</button>
+      </view>
+    </view>
+    <view class="depot">
+      <view class="depot-info">
+        <text class="depot-name">德廉测试</text>
+        <view class="depot-process">
+          <text class="depot-process-text">0/1777题</text>
+          <view class="depot-process-bar"></view>
+        </view>
+      </view>
+      <view class="depot-action">
+        <button>练习</button>
+      </view>
+    </view>
+    <view class="depot">
+      <view class="depot-info">
+        <text class="depot-name">德廉测试</text>
+        <view class="depot-process">
+          <text class="depot-process-text">0/1777题</text>
+          <view class="depot-process-bar"></view>
+        </view>
+      </view>
+      <view class="depot-action">
+        <button>练习</button>
+      </view>
+    </view>
   </block>
+  
 </view>
