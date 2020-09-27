@@ -1,4 +1,5 @@
 // pages/tiku/cate-list/index.js
+const app = getApp();
 Page({
 
     /**
@@ -50,6 +51,13 @@ Page({
                     tikuCateList: res.data.data
                 })
             }
+        })
+    },
+    selectedTikuCate(e){
+        console.log(e.currentTarget.dataset);
+        app.globalData.cate = e.currentTarget.dataset.cate;
+        wx.navigateBack({
+            delta: 1
         })
     }
 })

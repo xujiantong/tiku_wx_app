@@ -25,7 +25,6 @@ Page({
         }
       }
     });
-    
   },
   onShow() {
     if (typeof this.getTabBar === 'function' &&
@@ -34,9 +33,15 @@ Page({
         selected: 1
       })
     }
+    console.log("题库页面的 cate 加载")
+    console.log(app.globalData.cate);
+    // 获取当前题库下面的科目
   },
   // 获取选择的题库cate
   tikucate(e){
     console.log(e.detail.params)
-  }
+  },
+  tikucate2(e){
+    console.log(e.detail.params)
+  },
 })

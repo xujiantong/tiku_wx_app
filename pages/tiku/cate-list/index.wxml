@@ -5,7 +5,7 @@
 
 	<view class="home-grid">
 		<block wx:for="{{tikuCateList}}" wx:for-index="id" wx:key="id" wx:for-item="tikuCate">
-			<view class="grid-item">
+			<view class="grid-item" data-cate="{{tikuCate}}" bindtap="selectedTikuCate">
 				<image src="{{tikuCate.icon}}"> </image>
 				<text>{{tikuCate.name}}</text>
 			</view>
