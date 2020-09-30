@@ -1,5 +1,5 @@
 import {config} from "../config.js"
-class HTTP{
+export class HTTP{
     request(params){
         if(!params.method){
             params.method="GET"
@@ -14,7 +14,8 @@ class HTTP{
           },
           success: (res) => {
             let code = res.statusCode;
-            
+            console.log("HTTP")
+            console.log(res)
           },
           fail: (err) => {
 

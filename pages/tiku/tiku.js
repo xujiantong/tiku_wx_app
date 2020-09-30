@@ -1,3 +1,5 @@
+import {HTTP} from '../../utils/http.js'
+let http = new HTTP();
 const app = getApp()
 Page({
   data: {
@@ -9,6 +11,10 @@ Page({
       success: data => {
         if (data.authSetting['scope.userInfo']) {
           // 用户已授权
+          http.request({
+            url: `tiku/depot/findListByCategory.json?category=1`,
+            method: "POST",
+          })
           wx.getUserInfo({
             success: data => {
               app.globalData.userInfo = data.userInfo;
@@ -48,6 +54,7 @@ Page({
         hasCate: e.detail.params.hasCate
       });
       let that = this;
+     
       wx.request({
           url: `https://tiku.mok88.com/api/tiku/depot/findListByCategory.json?category=${cate.id}`,
           method: "POST",
