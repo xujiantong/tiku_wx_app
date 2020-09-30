@@ -5,7 +5,7 @@
     "pages/profile/profile",
     "components/tiku-navbar/index",
     "pages/tiku/cate-list/index",
-    "pages/login/index"
+    "pages/login/login"
   ],
   "window": {
     "navigationStyle": "custom",

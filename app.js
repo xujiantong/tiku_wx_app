@@ -4,8 +4,8 @@ App({
   onLaunch: function () {
     let that = this;
     wx.getSetting({
-      success: data => {
-        if (data.authSetting['scope.userInfo']) {
+      success: res => {
+        if(res.authSetting['scope.userInfo']) {
           // 用户已授权
           wx.getUserInfo({
             success: data => {
@@ -17,27 +17,12 @@ App({
           // 未授权
           console.log("err")
           wx.redirectTo({
-            url: '/pages/login/index'
+            url: '/pages/login/login'
           })
         }
       }
     });
-   
-
-
-
-
-  //  wx.request({
-  //    url: 'https://tiku.mok88.com/api/sys/user/findAll.json',
-  //    method: "POST",
-  //    header:{
-  //       "Content-Type": "application/json"
-  //    },
-  //    success: function(res){
-  //      console.log(res.data)
-  //    }
-  //  })
- 
+  
   },
   globalData: {
     userInfo: null,
