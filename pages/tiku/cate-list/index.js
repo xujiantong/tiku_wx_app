@@ -1,3 +1,5 @@
+import { TikuModel } from "../../../models/tikuModel";
+const tikuModel = new TikuModel();
 // pages/tiku/cate-list/index.js
 const app = getApp();
 Page({
@@ -36,25 +38,17 @@ Page({
     },
     getTikuCateList() {
         let that = this;
-        wx.request({
-            url: 'https://tiku.mok88.com/api/tiku/category/findAll.json',
-            method: "POST",
-            header: {
-                "Content-Type": "application/json"
-            },
-            success: function (res) {
-                console.log(res.data)
-                res.data.data.forEach(item=>{
-                    item.icon = '/images/icon/book.png'
-                })
-                that.setData({
-                    tikuCateList: res.data.data
-                })
-            }
-        })
+        tikuModel.getTikuCate((res)=>{
+            res.data.forEach(item=>{
+                item.icon = '/images/icon/book.png'
+            })
+            that.setData({
+                tikuCateList: res.data
+            })
+        });
+      
     },
     selectedTikuCate(e){
-        console.log(e.currentTarget.dataset);
         app.globalData.cate = e.currentTarget.dataset.cate;
         wx.setStorage({
           data: JSON.stringify(e.currentTarget.dataset.cate),

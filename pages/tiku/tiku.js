@@ -1,5 +1,5 @@
-import {HTTP} from '../../utils/http.js'
-let http = new HTTP();
+import { TikuModel } from "../../models/tikuModel";
+const tikuModel = new TikuModel();
 const app = getApp()
 Page({
   data: {
@@ -11,10 +11,6 @@ Page({
       success: data => {
         if (data.authSetting['scope.userInfo']) {
           // 用户已授权
-          http.request({
-            url: `tiku/depot/findListByCategory.json?category=1`,
-            method: "POST",
-          })
           wx.getUserInfo({
             success: data => {
               app.globalData.userInfo = data.userInfo;
@@ -53,20 +49,11 @@ Page({
         tikuCate: cate,
         hasCate: e.detail.params.hasCate
       });
-      let that = this;
-     
-      wx.request({
-          url: `https://tiku.mok88.com/api/tiku/depot/findListByCategory.json?category=${cate.id}`,
-          method: "POST",
-          header: {
-              "Content-Type": "application/json"
-          },
-          success: function (res) {
-              console.log(res.data.data)
-              that.setData({
-                tikuDepotList: res.data.data
-              })
-          }
+      console.log("depot")
+      tikuModel.getTikuDepot(cate.id,(res) => { 
+        this.setData({
+          tikuDepotList: res.data
+        })
       })
     } else {
       this.setData({
@@ -74,5 +61,13 @@ Page({
       })
     }
    
+  },
+  onDepotClick(e){
+    let depotId = e.detail.params.id;
+    wx.showToast({
+      title: '题目 ID: ' + depotId,
+      icon: "none"
+      
+    })
   }
 })

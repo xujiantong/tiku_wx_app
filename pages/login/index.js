@@ -1,28 +1,26 @@
-// pages/noLogin/index.js
+import { UserModel } from "../../models/userModel";
+const userModel = new UserModel();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+ 
   data: {
 
   },
   getUserInfo(event) {
-    console.log(event.detail.userInfo)
+    
+    console.log(event.detail.userInfo); // 用户信息
     wx.login({
       success: res=>{
-        console.log(res)
-        wx.request({
-          url: `http://localhost:8777/api/wx/user/login?JSCODE=${res.code}`,
-          method: "POST",
-          header: {
-              "Content-Type": "application/json"
-          },
-          success: function (res) {
-              console.log(res)
-           
+        console.log(res); //{errMsg, code(jscode)}
+        userModel.userLogin({
+          jscode: res.code,
+          userInfo:{
+            nickName: event.detail.userInfo.nickName,
+            avatarUrl: event.detail.userInfo.avatarUrl
           }
-      })
+        }, res=>{
+          console.log(res);
+        })
+       
         /**
          * todo: 用户注册/登录
          */

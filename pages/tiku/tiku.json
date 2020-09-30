@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "tiku-navbar": "/components/tiku-navbar/index"
+    "tiku-navbar": "/components/tiku-navbar/index",
+    "depot": "./depot/index"
   },
   "navigationStyle": "custom",
   "backgroundColor": "#ffffff"
