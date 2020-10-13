@@ -42,10 +42,7 @@ Component({
           })
         }
       })
-      
-
     }
-
   },
   pageLifetimes: {
     // 组件所在页面的生命周期函数
@@ -78,8 +75,6 @@ Component({
           }, {})
         }
       })
-   
-      
 
     }
   },
@@ -91,6 +86,16 @@ Component({
     goTikuCateList() {
       wx.navigateTo({
         url: '/pages/tiku/cate-list/index'
+      })
+    },
+    goFav(){
+      wx.navigateTo({
+        url: '/pages/tiku/fav/fav'
+      })
+    },
+    goErrorItem(){
+      wx.navigateTo({
+        url: '/pages/tiku/error-item/errorItem'
       })
     }
   }

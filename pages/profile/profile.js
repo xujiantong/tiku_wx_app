@@ -55,5 +55,11 @@ Page({
       hasUserInfo: true
     })
   },
+  clearUserInfo(){
+    wx.clearStorage();
+    wx.redirectTo({
+      url: '/pages/login/login'
+    })
+  }
   
-})
+});

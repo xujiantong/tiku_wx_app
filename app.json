@@ -1,44 +1,48 @@
 {
-  "pages": [
-    "pages/tiku/tiku",
-    "pages/home/home",
-    "pages/profile/profile",
-    "components/tiku-navbar/index",
-    "pages/tiku/cate-list/index",
-    "pages/login/login"
-  ],
-  "window": {
-    "navigationStyle": "custom",
-    "backgroundColor": "#ffffff"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "custom": true,
-    "color": "#999999",
-    "selectedColor": "#5785ED",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "/images/icon/tab-bar-home.png",
-        "selectedIconPath": "/images/icon/tab-bar-home-active.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/tiku/tiku",
-        "iconPath": "/images/icon/tab-bar-tiku.png",
-        "selectedIconPath": "/images/icon/tab-bar-tiku-active.png",
-        "text": "题库"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "iconPath": "/images/icon/tab-bar-profile.png",
-        "selectedIconPath": "/images/icon/tab-bar-profile-active.png",
-        "text": "我的"
-      }
-    ]
-  },
-  "usingComponents": {}
+    "pages": [
+        "pages/home/home",
+        "pages/tiku/tiku",
+        "pages/profile/profile",
+        "components/tiku-navbar/index",
+        "pages/tiku/cate-list/index",
+        "pages/login/login",
+        "pages/tiku/items/items",
+        "pages/tiku/fav/fav",
+        "pages/tiku/exercise/exercise",
+        "pages/tiku/error-item/errorItem"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#ffffff"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "custom": true,
+        "color": "#999999",
+        "selectedColor": "#5785ED",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "/images/icon/tab-bar-home.png",
+                "selectedIconPath": "/images/icon/tab-bar-home-active.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/tiku/tiku",
+                "iconPath": "/images/icon/tab-bar-tiku.png",
+                "selectedIconPath": "/images/icon/tab-bar-tiku-active.png",
+                "text": "题库"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "iconPath": "/images/icon/tab-bar-profile.png",
+                "selectedIconPath": "/images/icon/tab-bar-profile-active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {}
 }

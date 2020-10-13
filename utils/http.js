@@ -25,7 +25,7 @@ export class HTTP {
         // 用户自定义状态码
         if (res.data.code === "002") {
           params.success(res.data);
-        } else if(res.data.code === "005"){
+        } else if(["005","006"].includes(res.data.code) ){
           wx.redirectTo({
             url: '/pages/login/login'
           })

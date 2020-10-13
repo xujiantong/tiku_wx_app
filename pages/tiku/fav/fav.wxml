@@ -1,0 +1,30 @@
+<view class="fav">
+    <view class="fav-header">
+        <view class="count">
+            <text class="count-number">{{favList.total}}</text>
+            <text class="count-text">累计收藏</text>
+        </view>
+    </view>
+    <view class="block-hr"></view>
+    <view class="fav-list">
+        <block
+                wx:for="{{favList.list}}"
+                wx:for-index="index"
+                wx:for-item="fav"
+                wx:key="*this"
+        >
+            <view class="fav-item" data-depot-id="{{fav.depotId}}" data-type="fav" bindtap="jumpExercise">
+                <view class="fav-item-info">
+                    <view class="fav-item-depot">
+                        <view class="dot">
+                            <view class="dot-small"></view>
+                        </view>
+                        <view class="name">{{fav.depotName}}</view>
+                    </view>
+                    <text class="fav-item-count">{{fav.count}}</text>
+                </view>
+                <image src="/images/tiku/right_arrow.png"></image>
+            </view>
+        </block>
+    </view>
+</view>

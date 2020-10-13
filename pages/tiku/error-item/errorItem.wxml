@@ -1,0 +1,31 @@
+<view class="fav">
+    <view class="fav-header">
+        <!--<button  bindtap="goTikuCateList">切换题库</button>-->
+        <view class="count">
+            <text class="count-number">{{errorList.total}}</text>
+            <text class="count-text">累计错题</text>
+        </view>
+    </view>
+    <view class="block-hr"></view>
+    <view class="fav-list">
+        <block
+                wx:for="{{errorList.list}}"
+                wx:for-index="index"
+                wx:for-item="error"
+                wx:key="*this"
+        >
+            <view class="fav-item" data-depot-id="{{error.depotId}}" data-type="error" bindtap="jumpExercise">
+                <view class="fav-item-info">
+                    <view class="fav-item-depot">
+                        <view class="dot">
+                            <view class="dot-small"></view>
+                        </view>
+                        <view class="name">{{error.depotName}}</view>
+                    </view>
+                    <text class="fav-item-count">{{error.count}}</text>
+                </view>
+                <image src="/images/tiku/right_arrow.png"></image>
+            </view>
+        </block>
+    </view>
+</view>

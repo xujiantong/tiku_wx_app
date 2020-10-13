@@ -26,9 +26,11 @@ Component({
   methods: {
     accessDepot(e){
       let depotId = e.currentTarget.dataset.id;
+      let depotName = e.currentTarget.dataset.name;
       this.triggerEvent('onDepotClick', {
         params: {
-          id:depotId
+          id:depotId,
+          name:depotName
         }
       }, {})
     }

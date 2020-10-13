@@ -15,7 +15,7 @@
       </view>
     </view>
     <view class="action-row" style="top:{{navH}}px">
-      <view class="action-item">
+      <view class="action-item" bindtap="goFav">
         <image src="/images/tiku/fav.png"></image>
         <text>我的收藏</text>
       </view>
@@ -23,7 +23,7 @@
         <image src="/images/tiku/exam.png"></image>
         <text>我的考试</text>
       </view>
-      <view class="action-item">
+      <view class="action-item" bindtap="goErrorItem">
         <image src="/images/tiku/error.png"></image>
         <text>我的错题</text>
       </view>

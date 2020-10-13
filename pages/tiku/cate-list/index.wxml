@@ -1,8 +1,6 @@
 <!--pages/tiku/cate-list/index.wxml-->
 <view class="cate">
 
-	<!-- <view class="search"></view> -->
-
 	<view class="home-grid">
 		<block wx:for="{{tikuCateList}}" wx:for-index="id" wx:key="id" wx:for-item="tikuCate">
 			<view class="grid-item" data-cate="{{tikuCate}}" bindtap="selectedTikuCate">

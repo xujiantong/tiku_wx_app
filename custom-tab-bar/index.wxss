@@ -8,6 +8,7 @@
   display: flex;
   padding-bottom: env(safe-area-inset-bottom);
   padding-top: 15rpx;
+  z-index: 9999;
 }
 
 .tab-bar-border {

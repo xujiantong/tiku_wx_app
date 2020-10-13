@@ -63,11 +63,10 @@ Page({
    
   },
   onDepotClick(e){
+    console.log(e.detail.params)
     let depotId = e.detail.params.id;
-    wx.showToast({
-      title: '题目 ID: ' + depotId,
-      icon: "none"
-      
+    wx.navigateTo({
+      url: '/pages/tiku/items/items?depotId=' + depotId + '&name='+e.detail.params.name,
     })
   }
 })

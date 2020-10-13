@@ -1,0 +1,93 @@
+<view class="container">
+	<swiper indicator-dots="{{false}}" current="{{current}}" bindchange="swiperChange">
+		<block wx:for="{{depotItemList}}" wx:for-index="index" wx:for-item="depotItem" wx:key="id">
+			<swiper-item>
+				<view class="tiku-item">
+					<view class="item-info">
+						<view>
+							<text>第{{index+1}}题</text>
+							<text class="item-type">{{typeName[depotItem.type]}}</text>
+						</view>
+						<view><text class="currentIndex">{{index+1}}</text><text>/{{depotItemList.length}}</text></view>
+					</view>
+					<view class="tiku-item-main">{{depotItem.main}}</view>
+					<view class="tiku-item-options" wx:if="{{depotItem.type === 1 || depotItem.type === 3}}">
+						<block wx:for="{{depotItem.options}}" wx:for-index="key" wx:for-item="value" >
+							<view 
+							 data-type="{{depotItem.type}}"
+							 data-key="{{key}}"
+							 data-index="{{index}}"
+							 data-checked="{{depotItem.checked}}"
+							 data-item="{{depotItem}}"
+							 bindtap="checkAnswer"
+							  class="tiku-item-option {{(depotItem.answer2 !== '' && depotItem.answer === key) ? 'currentKey' :''}} {{depotItem.answer2 === key && depotItem.answer2 !== depotItem.answer ?'errorKey':''}}">
+                                <text class="option-key">{{key}}</text>
+                                <text>{{value}}</text>
+                            </view>
+						</block>
+						<view class="answer" wx:if="{{depotItem.answer2}}">答案: {{depotItem.answer}}</view>
+						<view class="answer" wx:if="{{depotItem.answer2}}" bindtap="itemNext">下一题</view>
+					</view>
+					<view class="tiku-item-options" wx:if="{{depotItem.type === 2}}">
+						<wxs module="m1">
+							function inArray(arr, arg) {
+								return arr.indexOf(arg) > -1;
+							}
+							module.exports.inArray = inArray;
+						</wxs>
+						<block wx:for="{{depotItem.options}}" wx:for-index="key" wx:for-item="value" >
+							<view
+									data-type="{{depotItem.type}}"
+									data-key="{{key}}"
+									data-index="{{index}}"
+									data-checked="{{depotItem.checked}}"
+									data-item="{{depotItem}}"
+									bindtap="checkMultipleAnswer"
+									class="tiku-item-option {{depotItem.checked ? (m1.inArray(depotItem.answer, key)? 'currentKey' : 'errorKey')  : (m1.inArray(depotItem.multipleAnswer, key)? 'currentKey' : '') }}">
+								<text class="option-key">{{key}} </text>
+								<text>{{value}}</text>
+							</view>
+						</block>
+						<view class="confirm-answer" wx:if="{{depotItem.answer2.length < 1 && !depotItem.checked}}" data-item="{{depotItem}}" data-index="{{index}}" bindtap="confirmMultipleAnswer">确认提交</view>
+						<view class="answer" wx:if="{{depotItem.checked}}">你的答案: {{depotItem.answer2}}</view>
+						<view class="answer" wx:if="{{depotItem.checked}}">正确答案: {{depotItem.answer}}</view>
+						<view class="answer" wx:if="{{depotItem.answer2}}" bindtap="itemNext">下一题</view>
+					</view>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="tiku-item-action">
+		<view class="tiku-action-section">
+		<view class="action-left">
+			<view class="fav" bindtap="favItems">
+				<image src="{{!hasFav? '/images/tiku/unfav_icon.png' : '/images/tiku/fav_icon.png'}}"></image>
+				<text class="{{!hasFav ? 'unfav-text' : 'fav-text'}}">收藏</text>
+			</view>
+		</view>
+		<view class="action-right">
+			<view class="card" bindtap="toggleAnswerSheet">
+				<image src="/images/tiku/card.png"></image>
+				<text>答题卡</text>
+			</view>
+		</view>
+			<!-- <view class="action"  bindtap="itemPrev">上一题</view>
+			<view class="action" bindtap="toggleAnswerSheet"><image src="./images/card.png"></image></view>
+			<view class="action"  bindtap="itemNext">下一题</view> -->
+		</view>
+		<wxs module="m2">
+			function isEqual(arr, arr2) {
+				return arr.sort().toString() === arr2.sort().toString();
+			}
+			module.exports.isEqual = isEqual;
+		</wxs>
+		<view class="tiku-answer-sheet" wx:if="{{answerSheetStatus}}">
+			<block wx:for="{{depotItemList}}" wx:for-index="index" wx:for-item="depotItem" wx:key="id">
+				<view wx:if="{{depotItem.type !== 2}}" bindtap="jumpItem" data-index="{{index}}" class="sheet-item {{(depotItem.answer2 !== '' && depotItem.answer2 === depotItem.answer) ? 'successKey' : (depotItem.answer2 !== '') ? 'errKey' : '' }}"><text>{{index+1}}</text></view>
+				<view wx:if="{{depotItem.type === 2}}" bindtap="jumpItem" data-index="{{index}}" class="sheet-item {{(depotItem.checked && m2.isEqual(depotItem.answer, depotItem.answer2) ? 'successKey' : (depotItem.answer2.length>0) ? 'errKey' : '')}}"><text>{{index+1}}</text></view>
+
+			</block>
+		</view>
+	</view>
+
+</view>

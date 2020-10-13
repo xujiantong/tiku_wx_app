@@ -9,7 +9,6 @@
   align-items: center;
   padding:0 15rpx 0 25rpx;
   box-sizing: border-box;
-  border-bottom: 1rpx dotted #ddd;
 }
 .depot-info{
   display: flex;
@@ -34,6 +33,7 @@
   height: 20rpx;
   background-color: #eeeeee;
   border-radius: 50rpx;
+  overflow: hidden;
 }
 .depot-action{
   width: 200rpx;
@@ -57,4 +57,9 @@
   font-family: "PingFangSC-Thin";
   font-weight: 600;
 
+}
+.depot-process-item{
+  background-image: linear-gradient(to bottom, #1370EB 0%, rgb(85, 152, 240) 100%);
+  height: 20rpx;
+  border-radius: 50rpx;
 }

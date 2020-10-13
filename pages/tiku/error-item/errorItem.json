@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的错题",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "default"
+}

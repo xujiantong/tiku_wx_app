@@ -5,11 +5,12 @@
     background-color: #fff;
 }
 .home-grid{
+  border-top: 1px solid #eeeeee;
     height: auto;
     width: 100%;
     /* min-height: 400rpx; */
     /* background-color: #fff; */
-    margin-top: 15rpx;
+    /* margin-top: 15rpx; */
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;

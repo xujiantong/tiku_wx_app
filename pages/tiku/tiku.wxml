@@ -3,19 +3,34 @@
     user-info="{{userInfo}}"
     bindtikucate="tikucate"
     bind:onGetTikuCate="onGetTikuCate"
-
   >
   </tiku-navbar>
-  <block wx:if="{{tikuDepotList.length > 0}}">
-   <block wx:for="{{tikuDepotList}}" wx:key="id" wx:for-index="id" wx:for-item="tikuDepot">
-      <depot 
-        depot="{{tikuDepot}}" 
-        bind:onDepotClick="onDepotClick"
-      />
-   </block>
-  
-   
-   
-  </block>
+    <wxs module="tikuMethods">
+        function isEmptyObj(obj) {
+            return JSON.stringify(obj) === "{}";
+        }
+        module.exports.isEmptyObj = isEmptyObj;
+    </wxs>
+    <view wx:if="{{!tikuMethods.isEmptyObj(tikuCate)}}">
+        <block wx:if="{{tikuDepotList.length > 0}}">
+            <block wx:for="{{tikuDepotList}}" wx:key="id" wx:for-index="id" wx:for-item="tikuDepot">
+                <depot
+                        depot="{{tikuDepot}}"
+                        bind:onDepotClick="onDepotClick"
+                />
+            </block>
+        </block>
+        <view wx:else class="no_data">
+            <image src="/images/inset/no_data.png"></image>
+            <text>暂无数据</text>
+        </view>
+    </view>
+    <view  wx:else>
+        <view class="no_data">
+            <image src="/images/inset/no_data.png"></image>
+            <text>请选择题库</text>
+        </view>
+    </view>
+
   
 </view>

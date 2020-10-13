@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "开始做题",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "default"
+}

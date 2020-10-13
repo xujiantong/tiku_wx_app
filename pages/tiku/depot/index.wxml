@@ -2,12 +2,14 @@
     <view class="depot-info">
       <text class="depot-name">{{depot.name}}</text>
       <view class="depot-process">
-        <text class="depot-process-text">0/1777题</text>
-        <view class="depot-process-bar"></view>
+        <text class="depot-process-text">{{depot.userDoItem}}/{{depot.itemCount}}题</text>
+        <view class="depot-process-bar">
+          <view class="depot-process-item" style=" width:{{depot.userDoItem/depot.itemCount*100}}%;"></view>
+        </view>
       </view>
     </view>
     <view class="depot-action">
-      <button bindtap="accessDepot" data-id="{{depot.id}}">练习</button>
+      <button bindtap="accessDepot" data-name="{{depot.name}}" data-id="{{depot.id}}">练习</button>
     </view>
   </view>
  
